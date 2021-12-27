@@ -34,3 +34,5 @@ kotlin {
         binaries.executable()
     }
 }
+
+apply(from = "ktlint.gradle")
