@@ -1,5 +1,10 @@
-import kotlinx.browser.document
+import kotlinx.browser.window
 
 fun main() {
-    document.write("Hello, world!")
+    window.onload = {
+        // TODO: Something
+    }
 }
+
+
+
