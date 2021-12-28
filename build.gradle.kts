@@ -1,8 +1,9 @@
 plugins {
     id("org.jetbrains.kotlin.js") version "1.6.10"
+    id("io.miret.etienne.sass") version "1.1.2"
 }
 
-group = "io.monosketch.land"
+group = "io.monosketch.web"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -36,3 +37,4 @@ kotlin {
 }
 
 apply(from = "ktlint.gradle")
+apply(from = "sass.gradle")
