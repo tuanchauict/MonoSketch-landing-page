@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;600;700&display=swap')
+
+$primaryFont: 'Fira Code', monospace
+$graphFont: 'Courier New', Courier, monospace
+
+$primaryTextSize: 16px
+
+$primaryTextColor: rgb(253, 248, 203)
+$linkTextColor: rgb(255, 246, 162)
+$hoverLinkTextColor: rgb(149, 248, 91)
+
+body
+    font-family: $primaryFont
+    font-size: $primaryTextSize
+    color: $primaryTextColor
+    background: black
+
+a
+    color: $linkTextColor
+
+    &:hover
+        color: $hoverLinkTextColor
+
+    &.button
+        text-decoration: none
+
+h1
+    font-weight: normal
+    font-size: $primaryTextSize
+    line-height: 18.5px
+
+.hidden
+    display: none
