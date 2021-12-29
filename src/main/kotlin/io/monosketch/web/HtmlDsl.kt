@@ -24,7 +24,6 @@ val Number.px: String
 fun styleOf(vararg attributes: Pair<String, String>): String =
     attributes.asSequence().map { "${it.first}: ${it.second}" }.joinToString(";")
 
-
 fun Element.setAttributes(vararg attrs: Pair<String, Any>) {
     for ((key, value) in attrs) {
         setAttribute(key, value.toString())
