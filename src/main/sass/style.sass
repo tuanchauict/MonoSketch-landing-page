@@ -9,12 +9,21 @@ $primaryTextColor: rgb(253, 248, 203)
 $linkTextColor: rgb(255, 246, 162)
 $hoverLinkTextColor: rgb(149, 248, 91)
 
+$baseHorizontalSpace: 20px
+$baseVerticalSpace: 20px
+
 body
     font-family: $primaryFont
-    font-size: $primaryTextSize
-    color: $primaryTextColor
     background: black
     line-height: 22px
+    padding: 32px 32px 32px 72px
+
+article
+    width: 820px
+    display: flex
+    flex-direction: column
+    font-size: $primaryTextSize
+    color: $primaryTextColor
 
 a
     color: $linkTextColor
@@ -25,20 +34,76 @@ a
     &.button
         text-decoration: none
 
-    &.content
+    &.no-underline
         text-decoration: none
 
 h1
     font-weight: normal
     font-size: $primaryTextSize
     line-height: 18.5px
+    margin: 64px 0 8px
+
+p
+    margin: 0
 
 .hidden
     display: none
 
-.content
-    white-space: pre
-
 .graph
     font-family: $graphFont
     line-height: 18px
+
+    & .line
+        display: block
+        white-space: pre
+
+.space-left-1
+    margin-left: $baseHorizontalSpace
+
+.space-left-2
+    margin-left: $baseHorizontalSpace * 2
+
+.space-left-3
+    margin-left: $baseHorizontalSpace * 3
+
+.space-top-1
+    margin-top: $baseVerticalSpace
+
+.space-top-2
+    margin-top: $baseVerticalSpace * 2
+
+.space-top-3
+    margin-top: $baseVerticalSpace * 3
+
+.space-bottom-1
+    margin-bottom: $baseVerticalSpace
+
+.space-bottom-2
+    margin-bottom: $baseVerticalSpace * 2
+
+.space-bottom-3
+    margin-bottom: $baseVerticalSpace * 3
+
+.center
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+.keep-white-space
+    white-space: pre
+
+.logo
+    line-height: 21px
+
+.side-note
+    color: white
+    font-weight: 600
+    cursor: pointer
+
+.footnote
+    color: #aaa
+    margin-top: $baseVerticalSpace * 4
+
+    & a
+        color: #ddd
