@@ -1,4 +1,4 @@
-name: Publish Alpha release
+name: Publish to web
 on:
   push:
     branches:
