@@ -24,7 +24,7 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           title: "[Auto merge][${{ steps.vars.outputs.branch }} -> ${{ secrets.RELEASE_BRANCH }}] Update release"
-          branch: auto-merge-alpha-release
+          branch: auto-merge-release
           labels: "bot"
           body: |
             Commit hash: ${{ steps.vars.outputs.sha }}
