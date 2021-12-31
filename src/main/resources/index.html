@@ -35,29 +35,92 @@
             [*]
         </span>
     </p>
-    <div class="center space-top-2 space-bottom-2">
-        <span class="graph">
+    <div class="center space-top-2 space-bottom-2 animation-container" data-duration="200" data-auto-play>
+        <span class="graph thumbnail">
             <span class="line">┌───────────────────────────────────────────────┐</span>
             <span class="line">│                                               │</span>
             <span class="line">│    Client           Server         Database   │</span>
             <span class="line">│                                     Server    │</span>
-            <span class="line">│      █                 █               █      │</span>
-            <span class="line">│      █   message #1    █               █      │</span>
+            <span class="line">│      █    message #1   █               █      │</span>
             <span class="line">│      █─ ─── ─── ─── ──▶█   update #1   █      │</span>
             <span class="line">│      █                 █─ ─── ─── ─── ▶█      │</span>
-            <span class="line">│      █                 █               █      │</span>
-            <span class="line">│      █                 █               █      │</span>
-            <span class="line">│      █                 █               █      │</span>
             <span class="line">│      █                 █               █      │</span>
             <span class="line">│      █                 █    OK #1      █      │</span>
             <span class="line">│      █      DONE #1    █◀── ─── ─── ───█      │</span>
             <span class="line">│      █◀── ─── ─── ─── ─█               █      │</span>
             <span class="line">│      █                 █               █      │</span>
-            <span class="line">│      █                 █               █      │</span>
-            <span class="line">│                                               │</span>
             <span class="line">│                                               │</span>
             <span class="line">└───────────────────────────────────────────────┘</span>
         </span>
+
+        <span class="graph frame">
+            <span class="line">┌───────────────────────────────────────────────┐</span>
+            <span class="line">│                                               │</span>
+            <span class="line">│    Client           Server         Database   │</span>
+            <span class="line">│                                     Server    │</span>
+            <span class="line">│      █    message #1   █               █      │</span>
+            <span class="line">│      █─ ─── ─── ─── ──▶█   update #1   █      │</span>
+            <span class="line">│      █                 █─ ─── ─── ─── ▶█      │</span>
+            <span class="line">│      █                 █               █      │</span>
+            <span class="line">│      █                 █    OK #1      █      │</span>
+            <span class="line">│      █      DONE #1    █◀── ─── ─── ───█      │</span>
+            <span class="line">│      █◀── ─── ─── ─── ─█               █      │</span>
+            <span class="line">│      █                 █               █      │</span>
+            <span class="line">│                                               │</span>
+            <span class="line">└───────────────────────────────────────────────┘</span>
+        </span>
+
+        <span class="graph frame">
+            <span class="line">┌───────────────────────────────────────────────┐</span>
+            <span class="line">│                                               │</span>
+            <span class="line">│    Client           Server         Database   │</span>
+            <span class="line">│                                     Server    │</span>
+            <span class="line">│      █    message #1   █               █      │</span>
+            <span class="line">│      █── ─── ─── ─── ─▶█   update #1   █      │</span>
+            <span class="line">│      █                 █── ─── ─── ───▶█      │</span>
+            <span class="line">│      █                 █               █      │</span>
+            <span class="line">│      █                 █    OK #1      █      │</span>
+            <span class="line">│      █      DONE #1    █◀─ ─── ─── ─── █      │</span>
+            <span class="line">│      █◀─ ─── ─── ─── ──█               █      │</span>
+            <span class="line">│      █                 █               █      │</span>
+            <span class="line">│                                               │</span>
+            <span class="line">└───────────────────────────────────────────────┘</span>
+        </span>
+
+        <span class="graph frame">
+            <span class="line">┌───────────────────────────────────────────────┐</span>
+            <span class="line">│                                               │</span>
+            <span class="line">│    Client           Server         Database   │</span>
+            <span class="line">│                                     Server    │</span>
+            <span class="line">│      █    message #1   █               █      │</span>
+            <span class="line">│      █─── ─── ─── ─── ▶█   update #1   █      │</span>
+            <span class="line">│      █                 █─── ─── ─── ──▶█      │</span>
+            <span class="line">│      █                 █               █      │</span>
+            <span class="line">│      █                 █    OK #1      █      │</span>
+            <span class="line">│      █      DONE #1    █◀ ─── ─── ─── ─█      │</span>
+            <span class="line">│      █◀ ─── ─── ─── ───█               █      │</span>
+            <span class="line">│      █                 █               █      │</span>
+            <span class="line">│                                               │</span>
+            <span class="line">└───────────────────────────────────────────────┘</span>
+        </span>
+
+        <span class="graph frame" data-duration="350">
+            <span class="line">┌───────────────────────────────────────────────┐</span>
+            <span class="line">│                                               │</span>
+            <span class="line">│    Client           Server         Database   │</span>
+            <span class="line">│                                     Server    │</span>
+            <span class="line">│      █    message #1   █               █      │</span>
+            <span class="line">│      █ ─── ─── ─── ───▶█   update #1   █      │</span>
+            <span class="line">│      █                 █ ─── ─── ─── ─▶█      │</span>
+            <span class="line">│      █                 █               █      │</span>
+            <span class="line">│      █                 █    OK #1      █      │</span>
+            <span class="line">│      █      DONE #1    █◀─── ─── ─── ──█      │</span>
+            <span class="line">│      █◀─── ─── ─── ─── █               █      │</span>
+            <span class="line">│      █                 █               █      │</span>
+            <span class="line">│                                               │</span>
+            <span class="line">└───────────────────────────────────────────────┘</span>
+        </span>
+
     </div>
     <div class="center space-top-3">
         <a class="graph no-underline" href="https://app.monosketch.io" target="#">
@@ -149,7 +212,7 @@
         <span class="line">│ downloading worker                  time                      time         │</span>
         <span class="line">│       │                               │                        │           │</span>
         <span class="line">│       │              before event     │                        │           │</span>
-        <span class="line">│    ●──┴─────────░░░░░░░░░░░░░░░░░░░░░░████████████████○████████│───┬─────▶ │</span>
+        <span class="line">│    ●──┴─────────░░░░░░░░░░░░░░░░░░░░░░████████████████○████████┴───┬─────▶ │</span>
         <span class="line">│                      ■────────────────────■           │            │       │</span>
         <span class="line">│                   Download           Resources is     │            │       │</span>
         <span class="line">│                   resources          downloaded       │            │       │</span>
