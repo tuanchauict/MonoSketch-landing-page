@@ -1,1 +1,1 @@
-rootProject.name = "landing-page-code"
+rootProject.name = "MonoSketch-web"
