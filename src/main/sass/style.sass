@@ -126,3 +126,19 @@ p
 
     & a
         color: #ddd
+
+.animation-container
+    cursor: pointer
+
+    & > .frame
+        display: none
+
+    & > .thumbnail
+        display: block
+
+    &.play
+        & > .thumbnail
+            display: none
+
+        & > .current
+            display: initial
