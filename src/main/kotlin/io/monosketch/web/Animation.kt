@@ -1,9 +1,11 @@
 package io.monosketch.web
 
 import kotlinx.browser.document
+import kotlinx.browser.window
 import kotlinx.dom.addClass
 import kotlinx.dom.removeClass
 import org.w3c.dom.HTMLElement
+import org.w3c.dom.Window
 
 /**
  * A class which manages animated images in the page
@@ -15,8 +17,33 @@ class Animation {
         .map(::AnimatedImage)
         .toList()
 
+    private val autoPlayImages: Sequence<AnimatedImage> = images.filter { it.isAutoPlay }.asSequence()
+
+    init {
+        onWindowChange()
+    }
+
     fun onWindowChange() {
-        // TODO: Update animation for images
+        val animationRange = window.getAnimationRange()
+
+        autoPlayImages.forEach {
+            val isPlay = it.topPx in animationRange || it.bottomPx in animationRange
+            if (isPlay) {
+                it.play()
+            } else {
+                it.stop()
+            }
+        }
+    }
+
+    private fun Window.getAnimationRange(): IntRange {
+        val windowTopPx = scrollY.toInt()
+        val windowBottomPx = windowTopPx + innerHeight
+        return (windowTopPx + INANIMATABLE_GAP)..(windowBottomPx - INANIMATABLE_GAP)
+    }
+
+    companion object {
+        private const val INANIMATABLE_GAP = 100
     }
 }
 
@@ -28,9 +55,17 @@ private class AnimatedImage(private val container: HTMLElement) {
         .map(::Frame)
         .toList()
 
-    private val isAutoPlay: Boolean = container.hasAttribute(ATTR_AUTO_PLAY)
+    val isAutoPlay: Boolean = container.hasAttribute(ATTR_AUTO_PLAY)
+
+    val topPx: Int
+        get() = container.offsetTop
+
+    val bottomPx: Int
+        get() = container.offsetTop + container.clientHeight
 
     private var frameTimeout: Cancelable? = null
+
+    private var currentFrameIndex: Int = 0
 
     init {
         if (!isAutoPlay) {
@@ -43,12 +78,13 @@ private class AnimatedImage(private val container: HTMLElement) {
         }
     }
 
-    private fun play() {
+    fun play() {
         container.addClass(CLASS_PLAY)
-        showFrame(0)
+        showFrame(currentFrameIndex)
     }
 
     private fun showFrame(frameIndex: Int) {
+        currentFrameIndex = frameIndex
         frameTimeout?.cancel()
 
         frames[frameIndex.previousFrameIndex].setVisibility(false)
@@ -68,7 +104,8 @@ private class AnimatedImage(private val container: HTMLElement) {
     private val Int.nextFrameIndex: Int
         get() = if (this < frames.lastIndex) this + 1 else 0
 
-    private fun stop() {
+    fun stop() {
+        currentFrameIndex = 0
         container.getElementsByClassName(CLASS_CURRENT)
             .asSequence()
             .forEach { it.removeClass(CLASS_CURRENT) }
