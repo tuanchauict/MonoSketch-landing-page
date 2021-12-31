@@ -1,4 +1,5 @@
 import io.monosketch.web.Animation
+import io.monosketch.web.Graph
 import io.monosketch.web.SideNote
 import kotlinx.browser.document
 import kotlinx.browser.window
@@ -12,6 +13,8 @@ fun main() {
 private fun onReady() {
     val body = document.body ?: return
     SideNote.register()
+    Graph.register()
+
     val animation = Animation()
     body.onscroll = {
         animation.onWindowChange()
