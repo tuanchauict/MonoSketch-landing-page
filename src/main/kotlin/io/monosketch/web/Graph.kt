@@ -9,8 +9,8 @@ object Graph {
             .asSequence()
             .filterIsInstance<HTMLElement>()
             .forEach {
-            it.inflate()
-        }
+                it.inflate()
+            }
     }
 
     private fun HTMLElement.inflate() {
