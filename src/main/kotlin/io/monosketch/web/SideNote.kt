@@ -63,7 +63,10 @@ class SideNote(
         private const val GITHUB = "https://github.com/tuanchauict/MonoSketch"
 
         fun register() {
-            document.getElementsByClassName("side-note").forEach(::SideNote)
+            document.getElementsByClassName("side-note")
+                .asSequence()
+                .filterIsInstance<HTMLElement>()
+                .forEach(::SideNote)
         }
     }
 }
