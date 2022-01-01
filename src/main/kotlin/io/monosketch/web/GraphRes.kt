@@ -1,8 +1,9 @@
 package io.monosketch.web
 
 object GraphRes {
-    private val graphs = mapOf(
-        "client-server-db#1" to """
+    private val introGraphs = framesOf(
+        "client-server-db",
+        """
 ┌───────────────────────────────────────────────┐
 │                                               │
 │    Client           Server         Database   │
@@ -18,7 +19,7 @@ object GraphRes {
 │                                               │
 └───────────────────────────────────────────────┘
         """.trim(),
-        "client-server-db#2" to """
+        """
 ┌───────────────────────────────────────────────┐
 │                                               │
 │    Client           Server         Database   │
@@ -34,7 +35,7 @@ object GraphRes {
 │                                               │
 └───────────────────────────────────────────────┘
         """.trim(),
-        "client-server-db#3" to """
+        """
 ┌───────────────────────────────────────────────┐
 │                                               │
 │    Client           Server         Database   │
@@ -50,7 +51,7 @@ object GraphRes {
 │                                               │
 └───────────────────────────────────────────────┘
         """.trim(),
-        "client-server-db#4" to """
+        """
 ┌───────────────────────────────────────────────┐
 │                                               │
 │    Client           Server         Database   │
@@ -68,5 +69,148 @@ object GraphRes {
         """.trim()
     )
 
+    private val featureGraphs = framesOf(
+        "feature-tool-rect",
+        """▫             
+              
+              
+              
+              """,
+        """┌─┐           
+└─┘           
+              
+              
+              """,
+        """┌──────┐      
+│      │      
+└──────┘      
+              
+              """,
+        """┌──────────┐  
+│          │  
+│          │  
+└──────────┘  
+              """,
+        """┌────────────┐
+│            │
+│            │
+│            │
+└────────────┘"""
+    ) + framesOf(
+        "feature-tool-text",
+        """
+
+│             
+
+""",
+        """
+
+H│            
+
+""",
+        """
+
+He│           
+
+""",
+        """
+
+Hel│          
+
+""",
+        """
+
+Hell│         
+
+""",
+        """
+
+Hello│        
+
+""",
+        """
+
+Hello │       
+
+""",
+        """
+
+Hello W│      
+
+""",
+        """
+
+Hello Wo│     
+
+""",
+        """
+
+Hello Wor│    
+
+""",
+        """
+
+Hello Worl│   
+
+""",
+        """
+
+Hello World│  
+
+""",
+        """
+
+Hello World!!│
+
+""",
+        """
+
+Hello World!!!
+
+"""
+    ) + framesOf(
+        "feature-tool-line",
+        """              
+              
+              
+              
+ ■            """,
+        """              
+              
+              
+              
+ ■──▶         """,
+        """              
+              
+              
+              
+ ■───────▶    """,
+        """              
+              
+              
+              
+ ■──────────▶ """,
+        """              
+              
+              
+            ▲ 
+ ■──────────┘ """,
+        """              
+              
+            ▲ 
+            │ 
+ ■──────────┘ """,
+        """            ▲ 
+            │ 
+            │ 
+            │ 
+ ■──────────┘ """
+    )
+
+    private val graphs = introGraphs + featureGraphs
+
     fun get(key: String): String? = graphs[key]
+
+    private fun framesOf(prefix: String, vararg frames: String): List<Pair<String, String>> =
+        frames.mapIndexed { index, s -> "$prefix#${index + 1}" to s }
 }
