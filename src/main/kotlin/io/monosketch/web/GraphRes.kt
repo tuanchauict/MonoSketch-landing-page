@@ -207,7 +207,7 @@ Hello World!!!
  ■──────────┘ """
     )
 
-    private val graphs = introGraphs + featureGraphs
+    private val graphs = (introGraphs + featureGraphs).toMap()
 
     fun get(key: String): String? = graphs[key]
 
