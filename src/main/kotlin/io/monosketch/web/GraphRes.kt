@@ -1,7 +1,8 @@
 package io.monosketch.web
 
 object GraphRes {
-    private val introGraphs = framesOf("client-server-db",
+    private val introGraphs = framesOf(
+        "client-server-db",
         """
 ┌───────────────────────────────────────────────┐
 │                                               │
