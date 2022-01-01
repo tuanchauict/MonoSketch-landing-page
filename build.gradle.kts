@@ -18,7 +18,6 @@ kotlin {
     js {
         browser {
             webpackTask {
-                outputFileName = "script.js"
                 cssSupport.enabled = true
             }
 

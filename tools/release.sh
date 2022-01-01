@@ -6,8 +6,8 @@ git config user.email "tunachauict@gmail.com"
 git config user.name "Tuan Chau"
 
 mv $src/index.html index.html
-mv $src/script.js script.js
-mv $src/script.js.map script.js.map
+mv $src/MonoSketch-web.js MonoSketch-web.js
+mv $src/MonoSketch-web.js.map MonoSketch-web.js.map
 mv $src/style.css style.css
 
 git add -A
