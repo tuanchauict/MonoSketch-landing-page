@@ -3,6 +3,7 @@ package io.monosketch.web
 import kotlinx.browser.document
 import kotlinx.browser.window
 import kotlinx.dom.addClass
+import kotlinx.dom.hasClass
 import kotlinx.dom.removeClass
 import org.w3c.dom.HTMLElement
 import org.w3c.dom.Window
@@ -79,6 +80,9 @@ private class AnimatedImage(private val container: HTMLElement) {
     }
 
     fun play() {
+        if (container.hasClass(CLASS_PLAY)) {
+            return
+        }
         container.addClass(CLASS_PLAY)
         showFrame(currentFrameIndex)
     }
